@@ -1,30 +1,66 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+    <the-nav></the-nav>
+    <router-view v-slot="slotProps">
+        <transition name="fade-button" mode="out-in">
+            <component :is="slotProps.Component"></component>
+        </transition>
+    </router-view>
 </template>
-
-<style lang="scss">
+<script>
+import TheNav from "./components/TheNav/TheNav"
+export default {
+    components: { TheNav },
+}
+</script>
+<style lang="scss" scoped>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+    font-family: Poppins, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+.fade-button-enter-from,
+.fade-button-leave-to {
+    opacity: 0;
+    transform: translateX(-120px);
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+.fade-button-enter-active {
+    transition: all 0.4s ease-out;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
+.fade-button-leave-active {
+    transition: all 0.4s ease-in;
+}
+
+.fade-button-enter-to,
+.fade-button-leave-from {
+    opacity: 1;
+    transform: translateX(0);
+}
+.route-enter-from {
+}
+.route-enter-active {
+    animation: slider 0.4s ease-out;
+}
+.route-enter-to {
+}
+.route-leave-active {
+    animation: slider 0.4s ease-in;
+}
+@keyframes slider {
+    0% {
+        transform: translateX(0) scale(1);
     }
-  }
+
+    70% {
+        transform: translateX(-120px) scale(-1.1);
+    }
+
+    100% {
+        transform: translateX(-150px) scale(1);
+    }
 }
 </style>

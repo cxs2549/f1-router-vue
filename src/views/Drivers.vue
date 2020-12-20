@@ -13,6 +13,14 @@
                 }"
             >
                 <div
+                    class="absolute w-full h-full px-4 pt-20 capitalize font-semibold text-sm"
+                    style="right: 0; top; 0"
+                >
+                    <div class="flex justify-end text-gray-300">
+                        {{ driver.team }}
+                    </div>
+                </div>
+                <div
                     class="absolute rounded opacity-25 w-full  flex justify-end"
                     style="zIndex: 0; right: 0; top: 2px;"
                 >
@@ -45,12 +53,12 @@
                     />
                     <div class="flex items-center z-10 ">
                         <h1
-                            class="order-2 text-white whitespace-nowrap text-xl xl:text-2xl font-semibold uppercase flex items-center ml-3 space-x-3"
+                            class="order-2 text-white whitespace-nowrap text-xl uppercase flex flex-col leading-5 items-center ml-4"
                         >
-                            <span class=" ">{{ driver.fname }}</span>
-                            <span class="uppercase font-bold ">{{ driver.lname }}</span>
+                            <span class=" fname">{{ driver.fname }}</span>
+                            <span class="uppercase font-bold lname">{{ driver.lname }}</span>
                         </h1>
-                        <h1 class="order-1 mr-auto text-4xl font-bold">{{ driver.rank }}</h1>
+                        <h1 class="order-1 mr-auto rank font-bold">{{ driver.rank }}</h1>
                     </div>
                 </div>
 
@@ -78,26 +86,47 @@ import sai from "../assets/images/sai.png"
 import saiWin from "../assets/images/sai-win.png"
 import flag6 from "../assets/images/flag-6.jpg"
 import nor from "../assets/images/nor.png"
+import norWin from "../assets/images/nor-win.png"
 import per from "../assets/images/per.png"
 import perWin from "../assets/images/per-win.png"
 import flag4 from "../assets/images/flag-4.jpg"
 import str from "../assets/images/str.png"
+import strWin from "../assets/images/str-win.png"
+import flag11 from "../assets/images/flag-11.jpg"
 import ric from "../assets/images/ric.png"
 import ricWin from "../assets/images/ric-win.png"
 import flag5 from "../assets/images/flag-5.jpg"
 import oco from "../assets/images/oco.png"
+import ocoWin from "../assets/images/oco-win.png"
+import flag12 from "../assets/images/flag-12.jpg"
 import lec from "../assets/images/lec.png"
 import flag8 from "../assets/images/flag-8.jpg"
 import lecWin from "../assets/images/lec-win.png"
 import vet from "../assets/images/vet.png"
+import vetWin from "../assets/images/vet-win.png"
+import flag13 from "../assets/images/flag-13.jpg"
 import kvy from "../assets/images/kvy.png"
+import kvyWin from "../assets/images/kvy-win.png"
+import flag14 from "../assets/images/flag-14.jpg"
 import hul from "../assets/images/hul.png"
+import hulWin from "../assets/images/hul-win.png"
+import flag15 from "../assets/images/flag-15.jpg"
 import gas from "../assets/images/gas.png"
+import gasWin from "../assets/images/gas-win.png"
+import flag10 from "../assets/images/flag-10.jpg"
 import gio from "../assets/images/gio.png"
+import gioWin from "../assets/images/gio-win.png"
+import flag17 from "../assets/images/flag-17.jpg"
 import gro from "../assets/images/gro.png"
+import groWin from "../assets/images/gro-win.png"
 import rai from "../assets/images/rai.png"
+import raiWin from "../assets/images/rai-win.png"
+import flag16 from "../assets/images/flag-16.jpg"
 import mag from "../assets/images/mag.png"
+import magWin from "../assets/images/mag-win.png"
+import flag20 from "../assets/images/flag-20.jpg"
 import rus from "../assets/images/rus.png"
+import rusWin from "../assets/images/rus-win.png"
 export default {
     data: () => ({
         drivers: [
@@ -116,6 +145,7 @@ export default {
             },
             {
                 rank: 2,
+                team: "mercedes",
                 fname: "Valtteri",
                 lname: "Bottas",
                 avatar: bot,
@@ -128,6 +158,7 @@ export default {
             },
             {
                 rank: 3,
+                team: "red bull racing",
                 fname: "Max",
                 lname: "Verstappen",
                 avatar: max,
@@ -141,6 +172,7 @@ export default {
 
             {
                 rank: 4,
+                team: "renault",
                 fname: "Sergio",
                 lname: "Perez",
                 avatar: per,
@@ -153,7 +185,8 @@ export default {
             },
             {
                 rank: 5,
-                name: "Daniel",
+                team: "renault",
+                fname: "Daniel",
                 lname: "Ricciardo",
                 avatar: ric,
                 number: 3,
@@ -165,6 +198,7 @@ export default {
             },
             {
                 rank: 6,
+                team: "mcLaren",
                 fname: "Carlos",
                 lname: "Sainz",
                 avatar: sai,
@@ -177,6 +211,7 @@ export default {
             },
             {
                 rank: 7,
+                team: "red bull racing",
                 fname: "Alexander",
                 lname: "Albon",
                 avatar: alb,
@@ -189,6 +224,7 @@ export default {
             },
             {
                 rank: 8,
+                team: "ferrari",
                 fname: "Charles",
                 lname: "Leclerc",
                 avatar: lec,
@@ -197,20 +233,164 @@ export default {
                 color: "#dc0000",
                 color2: "rgb(7	6	9	)",
                 win: lecWin,
-                flag: flag8
+                flag: flag8,
             },
-            { rank: 9, fname: "Lando", lname: "Norris", avatar: nor, color: "#ff8700" },
-            { rank: 10, fname: "Pierre", lname: "Gasly", avatar: gas, color: "#f5f2d0" },
-            { rank: 11, fname: "Lance", lname: "Stroll", avatar: str, color: "#f596c8" },
-            { rank: 12, fname: "Esteban", lname: "Ocon", avatar: oco, color: "#fff500" },
-            { rank: 13, fname: "Sebastian", lname: "Vettel", avatar: vet, color: "#dc0000" },
-            { rank: 14, fname: "Daniil", lname: "Kvyat", avatar: kvy, color: "#f5f2d0" },
-            { rank: 15, fname: "Nico", lname: "Hulkenberg", avatar: hul, color: "#f596c8" },
-            { rank: 16, fname: "Kimi", lname: "Raikkonen", avatar: rai, color: "#960000" },
-            { rank: 17, fname: "Antonio", lname: "Giovinazzi", avatar: gio, color: "#960000" },
-            { rank: 18, fname: "George", lname: "Russell", avatar: rus, color: "#0082fa" },
-            { rank: 19, fname: "Romain", lname: "Grosjean", avatar: gro, color: "#0082fa" },
-            { rank: 20, fname: "Kevin", lname: "Magnussen", avatar: mag, color: "#787878" },
+            {
+                rank: 9,
+                team: "mcLaren",
+                number: 4,
+                points: 97,
+                fname: "Lando",
+                lname: "Norris",
+                avatar: nor,
+                color: "#ff8700",
+                color2: "rgb(3	42	97	)",
+                flag: uk,
+                win: norWin,
+            },
+            {
+                rank: 10,
+                team: "alphaTauri",
+                fname: "Pierre",
+                lname: "Gasly",
+                number: 10,
+                points: 75,
+                avatar: gas,
+                color: "#f5f2d0",
+                color2: "rgb(7	19	32	)",
+                win: gasWin,
+                flag: flag10,
+            },
+            {
+                rank: 11,
+                team: "racing point",
+                fname: "Lance",
+                lname: "Stroll",
+                number: 18,
+                points: 75,
+                avatar: str,
+                color: "#f596c8",
+                color2: "rgb(0	64	193	)",
+                flag: flag11,
+                win: strWin,
+            },
+            {
+                rank: 12,
+                team: "renault",
+                fname: "Esteban",
+                lname: "Ocon",
+                number: "",
+                points: 62,
+                avatar: oco,
+                color: "#fff500",
+                color2: "rgb(33	34	34	)",
+                win: ocoWin,
+                flag: flag12,
+            },
+            {
+                rank: 13,
+                team: "ferrari",
+                fname: "Sebastian",
+                lname: "Vettel",
+                number: 5,
+                points: 33,
+                avatar: vet,
+                color: "#dc0000",
+                color2: "rgb(7	6	9	)",
+                win: vetWin,
+                flag: flag13,
+            },
+            {
+                rank: 14,
+                team: "alphaTauri",
+                fname: "Daniil",
+                lname: "Kvyat",
+                number: 26,
+                points: 32,
+                avatar: kvy,
+                color: "#f5f2d0",
+                color2: "rgb(7	19	32	)",
+                win: kvyWin,
+                flag: flag14,
+            },
+            {
+                rank: 15,
+                team: "racing point",
+                fname: "Nico",
+                lname: "Hulkenberg",
+                number: 27,
+                points: 10,
+                avatar: hul,
+                color: "#f596c8",
+                color2: "rgb(0	64	193	)",
+                win: hulWin,
+                flag: flag15,
+            },
+            {
+                rank: 16,
+                team: "alfa romeo racing",
+                fname: "Kimi",
+                lname: "Raikkonen",
+                number: 7,
+                points: 4,
+                avatar: rai,
+                color: "#960000",
+                color2: "rgb(7	6	9	)",
+                win: raiWin,
+                flag: flag16,
+            },
+            {
+                rank: 17,
+                team: "alfa romeo racing",
+                fname: "Antonio",
+                lname: "Giovinazzi",
+                number: 99,
+                points: 4,
+                avatar: gio,
+                color: "#960000",
+                color2: "rgb(7	6	9	)",
+                win: gioWin,
+                flag: flag17,
+            },
+            {
+                rank: 18,
+                team: "williams",
+                number: 63,
+                points: 3,
+                fname: "George",
+                lname: "Russell",
+                avatar: rus,
+                color: "#0082fa",
+                color2: "rgb(116	136	158		)",
+                win: rusWin,
+                flag: uk,
+            },
+            {
+                rank: 19,
+                team: "haas f1 team",
+                fname: "Romain",
+                lname: "Grosjean",
+                number: 8,
+                points: 2,
+                avatar: gro,
+                color: "#787878",
+                color2: "rgb(18	17	18	)",
+                win: groWin,
+                flag: flag12
+            },
+            {
+                rank: 20,
+                team: "haas f1 team",
+                fname: "Kevin",
+                lname: "Magnussen",
+                number: 20,
+                points: 1,
+                avatar: mag,
+                color: "#787878",
+                color2: "rgb(18	17	18	)",
+                win: magWin,
+                flag: flag20
+            },
         ],
     }),
 }

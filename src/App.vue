@@ -12,13 +12,23 @@ export default {
     components: { TheNav },
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 #app {
     font-family: Poppins, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+}
+
+.rank {
+    font-size: 42px;
+}
+.fname {
+    font-size: 12px * 1.5;
+}
+.lname {
+    font-size: 15px * 1.5;
 }
 
 .fade-button-enter-from,

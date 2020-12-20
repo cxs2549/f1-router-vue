@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div
-                    class="flex justify-between row-start-2 col-span-3 my-4 border-b-2 border-gray-600 "
+                    class="flex justify-between row-start-2 col-span-3 my-1 border-b-2 border-gray-600 "
                 >
                     <div class=" w-full justify-between flex ">
                         <div

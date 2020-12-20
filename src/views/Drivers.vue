@@ -29,7 +29,7 @@
                     </h1>
                 </div>
                 <div
-                    class="absolute text-4xl font-bold bg-black opacity-75 rounded px-2 py-1 z-20"
+                    class="absolute text-4xl font-bold bg-black opacity-75 rounded px-2 py-1 z-10"
                     style="right: 1rem; bottom: 1rem;"
                 >
                     <span>{{ driver.points }}<span class="text-2xl">pts</span></span>
@@ -87,6 +87,8 @@ import ricWin from "../assets/images/ric-win.png"
 import flag5 from "../assets/images/flag-5.jpg"
 import oco from "../assets/images/oco.png"
 import lec from "../assets/images/lec.png"
+import flag8 from "../assets/images/flag-8.jpg"
+import lecWin from "../assets/images/lec-win.png"
 import vet from "../assets/images/vet.png"
 import kvy from "../assets/images/kvy.png"
 import hul from "../assets/images/hul.png"
@@ -185,7 +187,18 @@ export default {
                 color2: "rgb(13	16	33	)",
                 flag: flag7,
             },
-            { rank: 8, fname: "Charles", lname: "Leclerc", avatar: lec, color: "#dc0000" },
+            {
+                rank: 8,
+                fname: "Charles",
+                lname: "Leclerc",
+                avatar: lec,
+                number: 16,
+                points: 98,
+                color: "#dc0000",
+                color2: "rgb(7	6	9	)",
+                win: lecWin,
+                flag: flag8
+            },
             { rank: 9, fname: "Lando", lname: "Norris", avatar: nor, color: "#ff8700" },
             { rank: 10, fname: "Pierre", lname: "Gasly", avatar: gas, color: "#f5f2d0" },
             { rank: 11, fname: "Lance", lname: "Stroll", avatar: str, color: "#f596c8" },
